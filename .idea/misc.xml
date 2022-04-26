@@ -5,7 +5,12 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.238" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.20885416666666667" />
         <entry key="app/src/main/res/layout/fragment_find_group.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_group.xml" value="0.1609375" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.20885416666666667" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2604166666666667" />
       </map>
     </option>
