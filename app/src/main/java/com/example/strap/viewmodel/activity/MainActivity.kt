@@ -3,12 +3,10 @@ package com.example.strap.viewmodel.activity
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.strap.R
 import com.example.strap.base.BaseActivity
 import com.example.strap.databinding.ActivityMainBinding
 import com.example.strap.viewmodel.fragment.CalendarFragment
-import com.example.strap.viewmodel.fragment.GroupFragment
 import com.example.strap.viewmodel.fragment.HomeFragment
 import com.example.strap.viewmodel.fragment.MypageFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -35,42 +33,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private fun initViews() {
         binding.bottomMenu.selectedItemId = R.id.home_fragment
-        changeFragment(HomeFragment())
+        changeFragment(binding.fragmentContainer.id, HomeFragment())
     }
 
     private fun bindViews() {
         binding.bottomMenu.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home_fragment -> {
-                    changeFragment(HomeFragment())
+                    changeFragment(binding.fragmentContainer.id, HomeFragment())
                 }
                 R.id.calendar_fragment -> {
-                    changeFragment(CalendarFragment())
+                    changeFragment(binding.fragmentContainer.id, CalendarFragment())
                 }
                 R.id.group_fragment -> {
-                    changeFragment(GroupFragment())
+                    changeFragment(binding.fragmentContainer.id, CalendarFragment())
                 }
                 R.id.mypage_fragment -> {
-                    changeFragment(MypageFragment())
+                    changeFragment(binding.fragmentContainer.id, MypageFragment())
                 }
             }
             return@setOnItemSelectedListener true
         }
-    }
-
-    fun changeFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .commit()
-    }
-
-    fun saveAndChangeFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(binding.fragmentContainer.id, fragment)
-            .addToBackStack(null)
-            .commit()
     }
 
     fun showToast(context: Context, text: String) {
