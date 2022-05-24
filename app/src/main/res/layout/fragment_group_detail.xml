@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/groupTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="지기TV의 복근루틴"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recentMemberView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="최근에 운동한 그룹원"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/groupTitleView" />
+
+        <TextView
+            android:id="@+id/noRecentMemberView"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="최근에 운동한 그룹원이 없습니다."
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recentMemberView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentMemberRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="12dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recentMemberView" />
+
+        <TextView
+            android:id="@+id/recentBadgeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="최근에 획득한 뱃지"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recentMemberRecyclerView" />
+
+        <TextView
+            android:id="@+id/noRecentBadgeView"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="최근에 획득한 뱃지가 없습니다."
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recentBadgeView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentBadgeRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="12dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recentBadgeView" />
+
+        <Button
+            android:id="@+id/btn_groupMember"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:text="그룹 내 랭킹"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_groupBadge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recentBadgeRecyclerView" />
+
+        <Button
+            android:id="@+id/btn_groupBadge"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:text="획득한 뱃지"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_groupMember"
+            app:layout_constraintTop_toBottomOf="@id/recentBadgeRecyclerView" />
+
+        <Button
+            android:id="@+id/btn_groupChat"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:text="그룹원들과의\n채팅"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btn_groupStatics"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_groupMember" />
+
+        <Button
+            android:id="@+id/btn_groupStatics"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:text="그룹 통계"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_groupChat"
+            app:layout_constraintTop_toBottomOf="@id/btn_groupBadge" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
