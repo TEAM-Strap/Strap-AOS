@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import com.example.strap.R
 
 abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutResId: Int) :
     AppCompatActivity() {
@@ -18,6 +20,21 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutRe
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this, layoutResId)
         binding.lifecycleOwner = this@BaseActivity
+    }
+
+    fun changeFragment(fragmentId: Int, fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(fragmentId, fragment)
+            .commit()
+    }
+
+    fun saveAndChangeFragment(fragmentId: Int, fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(fragmentId, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onStart() {
