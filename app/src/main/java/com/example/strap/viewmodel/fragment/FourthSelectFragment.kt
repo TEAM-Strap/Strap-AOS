@@ -1,9 +1,6 @@
 package com.example.strap.viewmodel.fragment
 
-import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,19 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.strap.R
 import com.example.strap.adapter.BadgeAdapter
-import com.example.strap.base.BaseFragment
-import com.example.strap.databinding.FragmentGroupInfoBinding
 import com.example.strap.databinding.ItemSelectFitnessViewpagerFourthBinding
-import com.example.strap.databinding.ItemSelectFitnessViewpagerThirdBinding
 import com.example.strap.entity.Badge
 import com.example.strap.entity.Community
 import com.example.strap.entity.User
-import com.example.strap.viewmodel.activity.MainActivity
 import com.example.strap.viewmodel.activity.SelectFitnessActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.*
 
 class FourthSelectFragment : Fragment() {
