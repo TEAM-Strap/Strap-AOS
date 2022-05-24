@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginVertical="6dp"
+        android:background="@color/white"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageCardView"
+                app:layout_constraintTop_toTopOf="@id/imageCardView"
+                tools:text="플랜에이 피트니스" />
+
+            <TextView
+                android:id="@+id/locationTextview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/nameTextView"
+                app:layout_constraintStart_toStartOf="@id/nameTextView"
+                app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+                tools:text="대전광역시 유성구 온천2동 410-12" />
+
+            <TextView
+                android:id="@+id/phoneTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="end"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/nameTextView"
+                app:layout_constraintStart_toStartOf="@id/nameTextView"
+                app:layout_constraintTop_toBottomOf="@+id/locationTextview"
+                tools:text="042-543-7775" />
+
+            <TextView
+                android:id="@+id/communityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:ellipsize="end"
+                android:gravity="top"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/orange_700"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/bottomTextView"
+                app:layout_constraintEnd_toStartOf="@+id/bottomTextView"
+                app:layout_constraintTop_toTopOf="@+id/bottomTextView"
+                tools:text="5" />
+
+            <TextView
+                android:id="@+id/bottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="개의 그룹 커뮤니티"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/nameTextView"
+                app:layout_constraintTop_toBottomOf="@id/phoneTextView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

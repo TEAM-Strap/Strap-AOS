@@ -8,14 +8,21 @@ import android.widget.Toast
 import com.example.strap.R
 import com.example.strap.base.BaseActivity
 import com.example.strap.databinding.ActivityLoginBinding
+import com.example.strap.entity.User
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.*
 
 class LoginActivity(override val ACTIVITY_TAG: String = "LoginActivity") :
     BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 
     private val auth by lazy {
         Firebase.auth
+    }
+
+    private val db by lazy {
+        FirebaseFirestore.getInstance()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +37,7 @@ class LoginActivity(override val ACTIVITY_TAG: String = "LoginActivity") :
         super.onStart()
 
         if (auth.currentUser != null) {
-            startMainActivity()
+            checkParticipate()
         }
     }
 
@@ -78,7 +85,7 @@ class LoginActivity(override val ACTIVITY_TAG: String = "LoginActivity") :
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     showToast(this@LoginActivity, "로그인에 성공하였습니다.")
-                    startMainActivity()
+                    checkParticipate()
                 } else {
                     showToast(this@LoginActivity, "로그인에 실패하였습니다.")
                 }
@@ -90,6 +97,16 @@ class LoginActivity(override val ACTIVITY_TAG: String = "LoginActivity") :
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
+                    // db에 사용자 정보 별도로 저장
+                    val data = User(
+                        null,
+                        email,
+                        binding.nicknameEditTextView.text.toString(),
+                        user!!.uid,
+                        null,
+                    )
+                    db.collection("database").document("user").collection("info").add(data)
+
                     binding.signViewGroup.visibility = View.GONE
                     binding.loginViewGroup.visibility = View.VISIBLE
                     showToast(this@LoginActivity, "회원가입에 성공하였습니다.")
@@ -109,10 +126,41 @@ class LoginActivity(override val ACTIVITY_TAG: String = "LoginActivity") :
         return !(signIdEditTextView.text.isNullOrEmpty() || signPasswordEditTextView.text.isNullOrEmpty() || checkPasswordEditTextView.text.isNullOrEmpty() || (signPasswordEditTextView.text.toString() != checkPasswordEditTextView.text.toString()))
     }
 
-    private fun startMainActivity() {
+    private fun beginSelectFitnessActivity() {
+        val intent = Intent(this@LoginActivity, SelectFitnessActivity::class.java)
+        intent.putExtra("uid", auth.uid)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun beginMainActivity() {
         val intent = Intent(this@LoginActivity, MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    // 그룹 가입 여부 검증
+    private fun checkParticipate() {
+        CoroutineScope(Dispatchers.IO).launch {
+            db.collection("database")
+                .document("user")
+                .collection("info")
+                .get()
+                .addOnCompleteListener { task ->
+                    if(task.isSuccessful) {
+                        for (document in task.result.documents) {
+                            val data = document.toObject(User::class.java)!!
+                            if (auth.uid == data.token) {
+                                if (data.community.isNullOrEmpty()) {
+                                    beginSelectFitnessActivity()
+                                } else {
+                                    beginMainActivity()
+                                }
+                            }
+                        }
+                    }
+                }
+        }
     }
 
     fun showToast(context: Context, text: String) {
