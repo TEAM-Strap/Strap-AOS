@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="signIdTextView, signPasswordTextView, checkPasswordTextView, btn_sign, btn_login_guide" />
+            app:constraint_referenced_ids="signIdTextView, nicknameTextView, signPasswordTextView, checkPasswordTextView, btn_sign, btn_login_guide" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/idTextView"
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ellipsize="end"
-                android:hint="아이디"
+                android:hint="이메일"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:lines="1"
@@ -110,7 +110,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            app:layout_constraintBottom_toTopOf="@id/signPasswordTextView"
+            app:layout_constraintBottom_toTopOf="@id/nicknameTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -121,7 +121,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ellipsize="end"
-                android:hint="아이디"
+                android:hint="이메일"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nicknameTextView"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signIdTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nicknameEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:hint="닉네임"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:lines="1"
@@ -135,10 +159,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/signIdTextView">
+            app:layout_constraintTop_toBottomOf="@id/nicknameTextView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signPasswordEditTextView"
