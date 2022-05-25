@@ -10,10 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Strap">
         <activity
+            android:name=".viewmodel.activity.ExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewmodel.activity.StartExercise"
+            android:exported="false" />
+        <activity
+            android:name=".viewmodel.activity.AddWorkoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewmodel.activity.AddRoutineActivity"
+            android:exported="false" />
+        <activity
             android:name=".viewmodel.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
