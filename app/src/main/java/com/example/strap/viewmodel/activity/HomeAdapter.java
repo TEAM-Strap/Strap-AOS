@@ -1,11 +1,15 @@
 package com.example.strap.viewmodel.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.strap.R;
@@ -13,7 +17,7 @@ import com.example.strap.R;
 import java.util.ArrayList;
 
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    ArrayList<AdapterType> routines;
+    public static ArrayList<AdapterType> routines;
 
     public interface OnItemClickListener {
         void onItemClick(View v, int position);
@@ -68,6 +72,15 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
 
             name = itemView.findViewById(R.id.name);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), StartExercise.class);
+                    intent.putExtra("routineName", name.getText().toString());
+                    ContextCompat.startActivity(view.getContext(), intent, null);
+                }
+            });
         }
 
         public void setName(Routine item) {

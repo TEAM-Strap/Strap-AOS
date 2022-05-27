@@ -33,7 +33,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         time = findViewById(R.id.time);
         start = findViewById(R.id.button_start);
-        end = findViewById(R.id.button_end);
+        end = findViewById(R.id.button_stop);
 
         start.setOnClickListener(onClickListener);
         end.setOnClickListener(onClickListener);
@@ -47,7 +47,7 @@ public class ExerciseActivity extends AppCompatActivity {
                     startButton();
                     break;
 
-                case R.id.button_end:
+                case R.id.button_stop:
                     endButton();
             }
         }
@@ -59,7 +59,6 @@ public class ExerciseActivity extends AppCompatActivity {
                 baseTime = SystemClock.elapsedRealtime();
 
                 handler.sendEmptyMessage(0);
-                start.setText("정지");
 
                 status = RUN;
                 break;

@@ -13,7 +13,7 @@ import com.example.strap.R;
 import java.util.ArrayList;
 
 public class RoutineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<AdapterType> items;
+    public static ArrayList<AdapterType> items;
 
     public interface OnItemClickListener {
         void onItemClick(View v, int position);
@@ -61,7 +61,7 @@ public class RoutineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         return items.get(position).getViewType();
     }
 
-    public class RoutineViewHolder extends RecyclerView.ViewHolder {
+    public static class RoutineViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         TextView weight;
         TextView count;
