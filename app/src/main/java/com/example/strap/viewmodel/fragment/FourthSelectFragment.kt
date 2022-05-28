@@ -12,20 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.strap.R
-import com.example.strap.adapter.BadgeAdapter
-import com.example.strap.base.BaseFragment
-import com.example.strap.databinding.FragmentGroupInfoBinding
 import com.example.strap.databinding.ItemSelectFitnessViewpagerFourthBinding
-import com.example.strap.databinding.ItemSelectFitnessViewpagerThirdBinding
-import com.example.strap.entity.Badge
 import com.example.strap.entity.Community
 import com.example.strap.entity.User
-import com.example.strap.viewmodel.activity.MainActivity
 import com.example.strap.viewmodel.activity.SelectFitnessActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.*
 
 class FourthSelectFragment : Fragment() {
@@ -33,27 +23,27 @@ class FourthSelectFragment : Fragment() {
     private lateinit var community: Community
     private lateinit var binding: ItemSelectFitnessViewpagerFourthBinding
 
-    private val badges = arrayListOf(
-        Badge(
-            1,
-            "근성왕",
-            "2022/05/01"
-        ),
-        Badge(
-            2,
-            "가슴왕",
-            "2022/02/01"
-        ),
-        Badge(
-            1,
-            "어깨왕",
-            "2022/02/01"
-        )
-    )
+//    private val badges = arrayListOf(
+//        Badge(
+//            1,
+//            "근성왕",
+//            "2022/05/01"
+//        ),
+//        Badge(
+//            2,
+//            "가슴왕",
+//            "2022/02/01"
+//        ),
+//        Badge(
+//            1,
+//            "어깨왕",
+//            "2022/02/01"
+//        )
+//    )
 
-    private val adapter by lazy {
-        BadgeAdapter(badges)
-    }
+//    private val adapter by lazy {
+//        BadgeAdapter(badges)
+//    }
 
     private val activity by lazy {
         requireActivity() as SelectFitnessActivity
@@ -82,10 +72,10 @@ class FourthSelectFragment : Fragment() {
     }
 
     private fun bindViews() {
-        val layoutManager = LinearLayoutManager(requireContext())
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = adapter
+//        val layoutManager = LinearLayoutManager(requireContext())
+//        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+//        binding.recyclerView.layoutManager = layoutManager
+//        binding.recyclerView.adapter = adapter
 
         CoroutineScope(Dispatchers.IO).launch {
             activity.db
