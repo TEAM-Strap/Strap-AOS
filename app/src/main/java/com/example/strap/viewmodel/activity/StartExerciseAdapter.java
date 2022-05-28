@@ -20,6 +20,18 @@ public class StartExerciseAdapter
 
     private ArrayList<Routine> exercises;
 
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position, Intent intent);
+    };
+
+    private OnItemClickListener mListener = null;
+    private OnItemClickListener getListener() {
+        return this.mListener;
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,7 +52,7 @@ public class StartExerciseAdapter
         return exercises.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
         TextView name;
         TextView weight;
         TextView count;
@@ -49,17 +61,26 @@ public class StartExerciseAdapter
         public ViewHolder(View itemView) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.name);
-            weight = itemView.findViewById(R.id.weight);
-            count = itemView.findViewById(R.id.count);
-            set = itemView.findViewById(R.id.set);
+            name = itemView.findViewById(R.id.name_of_start_screen);
+            weight = itemView.findViewById(R.id.weight_of_start_screen);
+            count = itemView.findViewById(R.id.count_of_start_screen);
+            set = itemView.findViewById(R.id.set_of_start_screen);
 
             ImageButton start = itemView.findViewById(R.id.start_exercise);
             start.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(itemView.getContext(), NowExercisingActivity.class);
-                    ContextCompat.startActivity(view.getContext(), intent, null);
+                    int position = getAdapterPosition();
+                    StartExercise.pos = position;
+                    StartExercise.counter = StartExercise.sets[StartExercise.pos];
+                    Intent intent = new Intent(view.getContext(), NowExercisingActivity.class);
+                    intent.putExtra("name", name.getText().toString());
+                    intent.putExtra("weight", weight.getText().toString());
+                    intent.putExtra("count", count.getText().toString());
+                    intent.putExtra("set", set.getText().toString());
+                    if (position != RecyclerView.NO_POSITION) {
+                        getListener().onItemClick(view, position, intent);
+                    }
                 }
             });
         }

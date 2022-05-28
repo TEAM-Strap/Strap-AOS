@@ -70,10 +70,11 @@
 
                 <ImageView
                     android:id="@+id/recommended3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginStart="85dp"
                     app:srcCompat="@drawable/recommended3" />
             </LinearLayout>
         </ScrollView>

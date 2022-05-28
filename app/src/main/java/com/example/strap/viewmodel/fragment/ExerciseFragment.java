@@ -21,11 +21,13 @@ import com.example.strap.R;
 import com.example.strap.viewmodel.activity.FragmentAdapter;
 import com.example.strap.viewmodel.activity.NowExercisingActivity;
 import com.example.strap.viewmodel.activity.Record;
+import com.example.strap.viewmodel.activity.StartExercise;
 import com.example.strap.viewmodel.activity.StartExerciseAdapter;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class ExerciseFragment extends Fragment {
@@ -33,7 +35,10 @@ public class ExerciseFragment extends Fragment {
     private TextView time;
     private Button start, end;
 
-    public static int count = 1;
+    private TextView viewName;
+    private TextView viewWeight;
+    private TextView viewCount;
+    private TextView viewSet;
 
     public static final int INIT = 0;
     public static final int RUN = 1;
@@ -44,6 +49,9 @@ public class ExerciseFragment extends Fragment {
     //타이머 시간 값을 저장할 변수
     private long baseTime, stopTime;
 
+    //해당 운동에 대한 총 운동 시간을 저장할 변수
+    private long totalTime;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +61,11 @@ public class ExerciseFragment extends Fragment {
         time = rootView.findViewById(R.id.timer);
         start = rootView.findViewById(R.id.button_start);
         end = rootView.findViewById(R.id.button_stop);
+
+        viewName = rootView.findViewById(R.id.name_of_timer_screen);
+        viewWeight = rootView.findViewById(R.id.weight_of_timer_screen);
+        viewCount = rootView.findViewById(R.id.count_of_timer_screen);
+        viewSet = rootView.findViewById(R.id.set_of_timer_screen);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView_for_record);
         LinearLayoutManager layoutManager =
@@ -108,6 +121,7 @@ public class ExerciseFragment extends Fragment {
             case RUN:
                 handler.removeMessages(0);
                 stopTime = SystemClock.elapsedRealtime();
+                totalTime += (stopTime-baseTime);
                 start.setText("resume");
                 end.setText("reset");
                 status = STOP;
@@ -115,12 +129,12 @@ public class ExerciseFragment extends Fragment {
 
             case STOP:
                 handler.removeMessages(0);
-                fragmentAdapter.addRecord(new Record(count, time.getText().toString()));
+                fragmentAdapter.addRecord(new Record(StartExercise.counter, time.getText().toString()));
                 fragmentAdapter.notifyDataSetChanged();
                 end.setText("stop");
                 start.setText("start");
                 time.setText("00 : 00 . 00");
-                count++;
+                StartExercise.sets[StartExercise.pos] = ++StartExercise.counter;
                 status = INIT;
         }
     }
@@ -132,6 +146,7 @@ public class ExerciseFragment extends Fragment {
         long m = overTime/1000/60;
         long s = (overTime/1000)%60;
         long ms = overTime%100;
+
 
         String recTime = String.format("%02d : %02d . %02d", m, s, ms);
         return recTime;
@@ -146,4 +161,29 @@ public class ExerciseFragment extends Fragment {
             handler.sendEmptyMessage(0);
         }
     };
+
+    public TextView getViewName() {
+        return viewName;
+    }
+
+    public TextView getViewWeight() {
+        return viewWeight;
+    }
+
+    public TextView getViewCount() {
+        return viewCount;
+    }
+
+    public TextView getViewSet() {
+        return viewSet;
+    }
+
+    public long getTotalTime() {
+        return this.totalTime;
+    }
+
+    public void setTotalTime(long newTotalTime) {
+        this.totalTime = newTotalTime;
+    }
+
 }

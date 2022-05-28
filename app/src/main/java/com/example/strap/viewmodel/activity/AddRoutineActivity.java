@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class AddRoutineActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_MENU = 101;
-    RoutineAdapter adapter;
+    public static RoutineAdapter adapter;
     EditText routineName;
 
     @Override
@@ -45,7 +45,7 @@ public class AddRoutineActivity extends AppCompatActivity {
             }
         });
 
-        adapter.setItems(new ArrayList<AdapterType>());
+        adapter.setItems(new ArrayList<AdapterType>(10));
         adapter.addItem(new AddButton());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);

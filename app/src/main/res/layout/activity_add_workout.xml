@@ -29,6 +29,7 @@
         android:ems="3"
         android:inputType="number"
         android:hint="kg"
+        android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="160dp"
         app:layout_constraintTop_toBottomOf="@id/guideline"
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:ems="3"
         android:hint="횟수"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/unit_count"
         app:layout_constraintTop_toBottomOf="@id/guideline"
@@ -56,6 +58,7 @@
         android:layout_height="wrap_content"
         android:ems="3"
         android:hint="세트"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@id/unit_count"
         app:layout_constraintEnd_toStartOf="@id/unit_set"
         app:layout_constraintTop_toBottomOf="@id/guideline"
@@ -138,7 +141,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/raiseup"
         app:layout_constraintTop_toBottomOf="@id/guideline"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="145dp"
         android:layout_marginLeft="105dp"
         app:layout_constraintStart_toStartOf="parent" />
 

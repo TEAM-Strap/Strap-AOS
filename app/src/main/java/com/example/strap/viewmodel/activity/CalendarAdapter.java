@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.strap.R;
+import com.example.strap.viewmodel.fragment.CalendarFragment;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ import java.util.ArrayList;
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
     private ArrayList<DayCard> calendar;
     private int selectedPosition = -1;
+    private int hasDataPosition = 2;
+    public static LinearLayout history;
 
     @NonNull
     @Override
@@ -53,7 +56,6 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
         LinearLayout layout;
         TextView day;
         TextView date;
-        boolean selected = false;
 
 
         public ViewHolder(View itemView) {
@@ -71,6 +73,13 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
                     if (pos != selectedPosition) {
                         if (selectedPosition != -1) {
                             notifyItemChanged(selectedPosition);
+                        }
+
+                        if (pos == hasDataPosition) {
+                            history.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            history.setVisibility(View.INVISIBLE);
                         }
                         selectedPosition = pos;
                         select();

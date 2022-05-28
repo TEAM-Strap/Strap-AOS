@@ -6,16 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.strap.R
 import com.example.strap.base.BaseFragment
 import com.example.strap.databinding.FragmentCalendarBinding
 import com.example.strap.viewmodel.activity.*
+import com.example.strap.viewmodel.activity.AddRoutineActivity.adapter
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment_calendar) {
     lateinit var recyclerView :RecyclerView
-
     override val FRAGMENT_TAG: String
         get() = "CalendarFragment"
 
@@ -27,12 +28,15 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
         val view = inflater.inflate(R.layout.fragment_calendar, null)
         recyclerView = view.findViewById(R.id.recyclerView_for_calendar)
 
-        initRecyclaView(recyclerView)
+        initRecyclerView(recyclerView)
+
+        val history:LinearLayout = view.findViewById(R.id.history_of_exercise)
+        CalendarAdapter.history = history
 
         return view
     }
 
-    private fun initRecyclaView(recyclerView: RecyclerView) {
+    private fun initRecyclerView(recyclerView: RecyclerView) {
         recyclerView.adapter = CalendarAdapter();
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

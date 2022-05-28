@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Strap">
         <activity
-            android:name=".viewmodel.activity.NowExercisingActivity"
+            android:name=".viewmodel.activity.TodayRoutineActivity"
             android:exported="false" />
         <activity
-            android:name=".viewmodel.activity.ExerciseActivity"
+            android:name=".viewmodel.activity.NowExercisingActivity"
             android:exported="false" />
         <activity
             android:name=".viewmodel.activity.StartExercise"
