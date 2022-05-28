@@ -8,24 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Strap">
         <activity
             android:name=".viewmodel.activity.TodayRoutineActivity"
-            android:exported="false" />
-        <activity
             android:name=".viewmodel.activity.NowExercisingActivity"
-            android:exported="false" />
-        <activity
             android:name=".viewmodel.activity.StartExercise"
-            android:exported="false" />
-        <activity
             android:name=".viewmodel.activity.AddWorkoutActivity"
-            android:exported="false" />
-        <activity
             android:name=".viewmodel.activity.AddRoutineActivity"
-            android:exported="false" />
-        <activity
             android:name=".viewmodel.activity.MainActivity"
+            android:name=".viewmodel.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".viewmodel.activity.MainActivity" />
+        <activity android:name=".viewmodel.activity.SelectFitnessActivity"/>
     </application>
 
 </manifest>
