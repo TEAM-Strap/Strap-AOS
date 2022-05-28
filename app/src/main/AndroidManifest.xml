@@ -11,12 +11,6 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Strap">
         <activity
-            android:name=".viewmodel.activity.TodayRoutineActivity"
-            android:name=".viewmodel.activity.NowExercisingActivity"
-            android:name=".viewmodel.activity.StartExercise"
-            android:name=".viewmodel.activity.AddWorkoutActivity"
-            android:name=".viewmodel.activity.AddRoutineActivity"
-            android:name=".viewmodel.activity.MainActivity"
             android:name=".viewmodel.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -27,6 +21,11 @@
         </activity>
         <activity android:name=".viewmodel.activity.MainActivity" />
         <activity android:name=".viewmodel.activity.SelectFitnessActivity"/>
+        <activity android:name=".viewmodel.activity.TodayRoutineActivity"/>
+        <activity android:name=".viewmodel.activity.NowExercisingActivity"/>
+        <activity android:name=".viewmodel.activity.StartExercise"/>
+        <activity android:name=".viewmodel.activity.AddWorkoutActivity"/>
+        <activity android:name=".viewmodel.activity.AddRoutineActivity"/>
     </application>
 
 </manifest>
