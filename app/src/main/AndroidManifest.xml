@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Strap">
+        <activity android:name=".viewmodel.activity.TodayRoutineActivity"/>
+        <activity android:name=".viewmodel.activity.NowExercisingActivity"/>
+        <activity android:name=".viewmodel.activity.StartExercise"/>
+        <activity android:name=".viewmodel.activity.AddWorkoutActivity"/>
+        <activity android:name=".viewmodel.activity.AddRoutineActivity"/>
         <activity
             android:name=".viewmodel.activity.LoginActivity"
             android:exported="true">
