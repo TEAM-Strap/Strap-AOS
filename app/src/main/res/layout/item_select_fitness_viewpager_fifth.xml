@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center"
-            android:text="방장의 가입 수락 이후\n그룹 활동을 시작할 수 있습니다."
+            android:text="그룹원들과 함께\n운동을 시작해보세요!"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

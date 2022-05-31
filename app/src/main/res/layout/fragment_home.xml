@@ -47,7 +47,7 @@
                     android:backgroundTint="#00000000"
                     android:backgroundTintMode="add"
                     android:text="오늘의 추천 루틴 >"
-                    android:textColor="#A07676"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <ImageView
