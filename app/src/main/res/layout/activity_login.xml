@@ -11,8 +11,8 @@
             android:id="@+id/titleImageView"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/exercise_icon"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/app_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

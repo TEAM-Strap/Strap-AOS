@@ -10,4 +10,6 @@
     <color name="black">#FF000000</color>
     <color name="gray">#CCCCCC</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gradient">#C79DB5</color>
+    <color name="gradient_700">#E1AFCC</color>
 </resources>

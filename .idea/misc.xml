@@ -33,14 +33,37 @@
         <entry key="..\:/Users/DonghunBaek/Strap/app/src/main/res/layout/workout_start_layout.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/box_radius_background.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/btn_day_no_pick.xml" value="0.2845" />
+        <entry key="app/src/main/res/drawable/btn_day_yes_pick.xml" value="0.2845" />
+        <entry key="app/src/main/res/drawable/exercise_icon.xml" value="0.2855" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2025" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.238" />
+        <entry key="app/src/main/res/drawable/rect_drawable.xml" value="0.2025" />
+        <entry key="app/src/main/res/drawable/recyclerview_background_drawable.xml" value="0.3375" />
+        <entry key="app/src/main/res/drawable/view_drawable.xml" value="0.2025" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/activity_start_exercise.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/activity_today_routine.xml" value="0.4323115030924479" />
+        <entry key="app/src/main/res/layout/add_button_layout.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/daycard_layout.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/fragment_add_group_community.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.20885416666666667" />
         <entry key="app/src/main/res/layout/fragment_find_group.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/fragment_group.xml" value="0.1609375" />
+        <entry key="app/src/main/res/layout/fragment_group.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.20885416666666667" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/res/layout/item_community_rank.xml" value="0.182370820668693" />
+        <entry key="app/src/main/res/layout/item_community_routine.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_fitness_list.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/item_select_fitness_viewpager_fifth.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/item_select_fitness_viewpager_first.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/item_select_fitness_viewpager_fourth.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/item_select_fitness_viewpager_second.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/item_select_fitness_viewpager_third.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/routine_layout.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/set_record_layout.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/workout_start_layout.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2604166666666667" />
       </map>
     </option>

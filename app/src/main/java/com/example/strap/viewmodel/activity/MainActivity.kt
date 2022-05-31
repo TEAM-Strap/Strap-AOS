@@ -7,6 +7,7 @@ import com.example.strap.R
 import com.example.strap.base.BaseActivity
 import com.example.strap.databinding.ActivityMainBinding
 import com.example.strap.viewmodel.fragment.CalendarFragment
+import com.example.strap.viewmodel.fragment.GroupFragment
 import com.example.strap.viewmodel.fragment.HomeFragment
 import com.example.strap.viewmodel.fragment.MypageFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -46,10 +47,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                     changeFragment(binding.fragmentContainer.id, CalendarFragment())
                 }
                 R.id.group_fragment -> {
-                    changeFragment(binding.fragmentContainer.id, CalendarFragment())
-                }
-                R.id.mypage_fragment -> {
-                    changeFragment(binding.fragmentContainer.id, MypageFragment())
+                    changeFragment(binding.fragmentContainer.id, GroupFragment())
                 }
             }
             return@setOnItemSelectedListener true

@@ -54,9 +54,38 @@ class ThirdSelectFragment : Fragment() {
         binding.lifecycleOwner = this@ThirdSelectFragment
 
         initViews()
+        bindViews()
         initRecyclerView()
 
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            communityItems.clear()
+
+            activity.db
+                .collection("database")
+                .document("fitness")
+                .collection("community")
+                .get()
+                .addOnCompleteListener { task ->
+                    communityItems.clear()
+
+                    if (task.isSuccessful) {
+                        for (document in task.result.documents) {
+                            if (communityList.contains(document.id)) {
+                                val data = document.toObject(Community::class.java)!!
+                                communityItems.add(data)
+                            }
+                        }
+
+                        adapter.submitList(communityItems)
+                    }
+                }
+        }
     }
 
     private fun initViews() {
@@ -69,6 +98,8 @@ class ThirdSelectFragment : Fragment() {
 
     private fun initRecyclerView() = with(binding) {
         CoroutineScope(Dispatchers.IO).launch {
+            communityItems.clear()
+
             activity.db
                 .collection("database")
                 .document("fitness")
@@ -77,7 +108,7 @@ class ThirdSelectFragment : Fragment() {
                 .addOnCompleteListener { task ->
                     communityItems.clear()
 
-                    if(task.isSuccessful) {
+                    if (task.isSuccessful) {
                         for (document in task.result.documents) {
                             if (communityList.contains(document.id)) {
                                 val data = document.toObject(Community::class.java)!!
@@ -94,6 +125,12 @@ class ThirdSelectFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         hideProgress()
+    }
+
+    private fun bindViews() = with(binding) {
+        btnMade.setOnClickListener {
+            activity.saveAndChangeFragment(activity.binding.frameLayout.id, AddCommunityFragment())
+        }
     }
 
 

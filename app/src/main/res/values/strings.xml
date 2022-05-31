@@ -2,6 +2,5 @@
     <string name="app_name">Strap</string>
     <string name="bottom_home">홈</string>
     <string name="bottom_calendar">캘린더</string>
-    <string name="bottom_group">그룹 검색</string>
-    <string name="bottom_account">마이페이지</string>
+    <string name="bottom_group">그룹 커뮤니티</string>
 </resources>
