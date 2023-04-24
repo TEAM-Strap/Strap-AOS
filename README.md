@@ -1,14 +1,14 @@
 
 # 💪 STRAP 
 
-충남대학교 기초 프로젝트 교과목에서 진행한 프로젝트로 지역 내 헬스장에서 그룹원들 간에 대면 운동을 통해 **헬스 입문자**의 지속적인 헬스를 장려하기 위한 **헬스케어 어플리케이션**
+지역 내 헬스장에서 그룹원들 간에 대면 운동을 통해 **헬스 입문자**의 지속적인 헬스를 장려하기 위한 **헬스케어 어플리케이션**
 
 ## 👩‍👩‍👧‍👦 팀 소개
 
 |Part|Name|
 |:-:|:-:|
-|Android & Leader|고도현|
-|Android|백동훈|
+|Android & Leader|[DH](https://github.com/k906506)|
+|Android|[백동훈](https://github.com/raceStarter)|
 |UI & UX|김재현|
 |UI & UX|이주형|
 
@@ -60,7 +60,7 @@ feature -> develop -> master 로 관리한다.
 'feature' 브랜치는 다음과 같이 'develop' 브랜치에서 분기한다.
 
 ```
-$ git checkout -b kodohyeon_feature develop
+$ git checkout -b honggildong_feature develop
 ```
 
 'feature' 브랜치에서 모든 작업이 끝나면 다음과 같이 'develop' 브랜치로 merge하고 더이상 필요하지 않은 'feature' 브랜치는 삭제한다.
@@ -68,10 +68,10 @@ $ git checkout -b kodohyeon_feature develop
 ```
 $ git checkout develop
 Switched to branch 'develop'.
-$ git merge --no-ff kodohyeon_feature
+$ git merge --no-ff honggildong_feature
 Updating asd293u...ddu9.
 (Summary of changes)
-$ git branch -d kodohyeon_feature
-Deleted branch kodohyeon_feature.
+$ git branch -d honggildong_feature
+Deleted branch honggildong_feature.
 $ git push origin develop
 ```
