@@ -8,7 +8,7 @@
 |Part|Name|
 |:-:|:-:|
 |Android & Leader|[DH](https://github.com/k906506)|
-|Android|[백동훈](https://github.com/raceStarter)|
+|Android|[백동훈](https://github.com/DigitalBard)|
 |UI & UX|김재현|
 |UI & UX|이주형|
 
